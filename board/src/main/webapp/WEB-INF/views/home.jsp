@@ -6,11 +6,14 @@
 	<title>Home</title>
 </head>
 <body>
-<h1>
-	Oauch 게시판 만들기  
-</h1>
-
-<P>  Time : ${serverTime}. </P>
-<p><a href="/board/list">게시물 목록</a></p>
+	<h1>
+		Oauch 게시판 만들기  
+	</h1>
+	
+	<P>  Time : ${serverTime}. </P>
+	<p>
+		<a href="/board/list">게시물 목록</a><br />
+		<a href="/board/write">게시글 작성</a>
+	</p>
 </body>
 </html>
