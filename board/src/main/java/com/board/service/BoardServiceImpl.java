@@ -35,4 +35,17 @@ public class BoardServiceImpl implements BoardSerivce {
 		
 		return dao.view(bno);
 	}
+
+	// 게시물 수정
+	@Override
+	public void modify(BoardVo vo) throws Exception {
+	  
+		dao.modify(vo);
+	}
+	
+	// 게시물 삭제
+	public void delete(int bno) throws Exception {
+		
+		dao.delete(bno);
+	}
 }

@@ -41,4 +41,21 @@ SELECT bno		AS	bno			/* 게시글 번호 */
   FROM tbl_board
  WHERE bno = #{bno}
 </select>
+
+<!-- 게시글 수정 -->
+<update id="modify" parameterType="com.board.domain.BoardVo">
+UPDATE tbl_board
+   SET
+       title = #{title}
+     , content = #{content}
+     , writer = #{writer}
+ WHERE bno = #{bno}
+</update>
+
+<!-- 게시글 삭제 -->
+<delete id="delete" parameterType="int">
+DELETE
+  FROM tbl_board
+ WHERE bno = #{bno}
+ </delete>
 </mapper>
