@@ -58,4 +58,22 @@ DELETE
   FROM tbl_board
  WHERE bno = #{bno}
  </delete>
+ 
+ <!-- 게시글 총 갯수 -->
+ <select id="count" parameterType="int">
+ SELECT COUNT(bno)
+   FROM tbl_board
+ </select>
+ 
+ <!-- 게시글 목록 + 페이징 -->
+ <select id="listpage" parameterType="hashMap" resultType="com.board.domain.BoardVo">
+SELECT bno
+	 , title
+	 , writer
+	 , regDate
+	 , viewCnt
+  FROM tbl_board
+ORDER BY bno
+ LIMIT #{displayPost}, #{postNum}
+ </select>
 </mapper>

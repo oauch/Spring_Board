@@ -20,4 +20,10 @@ public interface BoardDao {
 	
 	// 게시뮬 삭제
 	public void delete(int bno) throws Exception;
+	
+	// 게시글 총 갯수
+	public int count() throws Exception;
+	
+	// 게시물 목록 + 페이징
+	public List<BoardVo> listPage(int displayPost, int postNum) throws Exception;
 }
