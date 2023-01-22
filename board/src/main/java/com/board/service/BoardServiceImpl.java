@@ -49,19 +49,16 @@ public class BoardServiceImpl implements BoardSerivce {
 		dao.delete(bno);
 	}
 	
-	// 게시글 총 갯수
+	// 게시물 총 갯수
 	@Override
 	public int count() throws Exception {
-		
 		return dao.count();
 	}
-	
-	// 게시글 목록 + 페이징
+
+	// 게시물 목록 + 페이징
 	@Override
-	public List<BoardVo> listPage(int displayPort, int postNum) throws Exception {
-		
-		return dao.listPage(displayPort, postNum);
+	public List<BoardVo> listPage(int displayPost, int postNum) throws Exception {
+		return dao.listPage(displayPost, postNum);
 	}
-	
 	
 }

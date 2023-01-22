@@ -9,9 +9,9 @@
 </head>
 <body>
 
-<div id="nav">
-<%@ include file="../include/nav.jsp" %>
-</div>
+	<div id="nav">
+	<%@ include file="../include/nav.jsp" %>
+	</div>
 
 	<table>
 	 <thead>
@@ -47,6 +47,6 @@
 		     <a href="/board/listPage?num=${num}">${num}</a>
 		   </span>
 		 </c:forEach>
-		</div>
+	</div>
 </body>
 </html>
