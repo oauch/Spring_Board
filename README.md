@@ -95,7 +95,7 @@ public class BoardController {
 > 이 부분을 id="listpage"로 적어서 500 오류가 발생했던것이다. </br></br>
 
 📍 페이징 구현 및 이전, 다음 버튼 구현</br></br> 
-
+📍 페이징 클래스화</br></br> 
 
 
 # 오류 모음
