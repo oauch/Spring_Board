@@ -60,5 +60,12 @@ public class BoardServiceImpl implements BoardSerivce {
 	public List<BoardVo> listPage(int displayPost, int postNum) throws Exception {
 		return dao.listPage(displayPost, postNum);
 	}
+
+	@Override
+	public List<BoardVo> listPageSearch(int displayPost, int postNum, String searchType, String keyword)
+			throws Exception {
+		
+		return dao.listPageSearch(displayPost, postNum, searchType, keyword);
+	}
 	
 }

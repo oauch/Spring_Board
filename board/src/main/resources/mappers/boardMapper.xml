@@ -76,4 +76,29 @@ SELECT bno
 ORDER BY bno
  LIMIT #{displayPost}, #{postNum}
  </select>
+ 
+ <!-- 게시물 목록 + 페이징 -->
+<select id="listPageSearch" parameterType="hashMap" resultType="com.board.domain.BoardVo">
+SELECT bno
+	 , title
+	 , writer
+	 , regDate
+	 , viewCnt
+  FROM tbl_board
+<if test='searchType.equals("title")'>
+WHERE title LIKE concat('%', #{keyword}, '%')
+</if>
+<if test='searchType.equals("content")'>
+WHERE content LIKE concat('%', #{keyword}, '%')
+</if>
+<if test='searchType.equals("title_content")'>
+WHERE title LIKE concat('%', #{keyword}, '%')
+  or  content LIKE concat('%', #{keyword}, '%')
+</if>
+<if test='searchType.equals("writer")'>
+WHERE writer LIKE concat('%', #{keyword}, '%')
+</if>
+ORDER BY bno
+ LIMIT #{displayPost}, #{postNum}
+ </select>
 </mapper>
