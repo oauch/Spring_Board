@@ -44,22 +44,22 @@ method = 어떤 요청을 받을지 정의
 public class BoardController {
 
     @RequestMapping(value = "/board", method = RequestMethod.GET)
-    public String helloGet(...) {
+    public String boardGet(...) {
         ...
     }
 
     @RequestMapping(value = "/board", method = RequestMethod.POST)
-    public String helloPost(...) {
+    public String boardPost(...) {
         ...
     }
 
    @RequestMapping(value = "/board", method = RequestMethod.PUT)
-    public String helloPut(...) {
+    public String boardPut(...) {
         ...
     }
 
     @RequestMapping(value = "/board", method = RequestMethod.DELETE)
-    public String helloDelete(...) {
+    public String boardDelete(...) {
         ...
     }
 }

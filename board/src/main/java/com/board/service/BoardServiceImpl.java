@@ -68,4 +68,10 @@ public class BoardServiceImpl implements BoardSerivce {
 		return dao.listPageSearch(displayPost, postNum, searchType, keyword);
 	}
 	
+	// 게시물 총 갯수 + 검색 적용
+	@Override
+	public int searchCount(String searchType, String keyword) throws Exception {
+		return dao.searchCount(searchType, keyword);
+	}
+	
 }

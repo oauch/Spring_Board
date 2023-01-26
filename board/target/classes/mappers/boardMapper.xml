@@ -101,4 +101,23 @@ WHERE writer LIKE concat('%', #{keyword}, '%')
 ORDER BY bno
  LIMIT #{displayPost}, #{postNum}
  </select>
+ 
+<!-- 게시물 총 갯수 + 검색적용 -->
+<select id="searchCount" parameterType="hashMap" resultType="int">
+SELECT COUNT(bno)
+  FROM tbl_board 
+<if test='searchType.equals("title")'>
+ WHERE title LIKE concat('%', #{keyword}, '%')
+</if>
+<if test='searchType.equals("content")'>
+WHERE content LIKE concat('%', #{keyword}, '%')
+</if>
+<if test='searchType.equals("title_content")'>
+WHERE title LIKE concat('%', #{keyword}, '%')
+  or  content LIKE concat('%', #{keyword}, '%')
+</if>
+<if test='searchType.equals("writer")'>
+WHERE writer LIKE concat('%', #{keyword}, '%')
+</if>
+ </select>
 </mapper>
