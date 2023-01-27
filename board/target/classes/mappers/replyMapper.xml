@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.board.mappers.reply">
+<!-- 댓글 조회 -->
+<select id="replyList" parameterType="int" resultType="com.board.domain.ReplyVo">
+select
+		rno, bno, writer, content, regDate
+	from tbl_reply
+		where bno = #{bno}
+</select>
+
+<!-- 댓글 작성 -->
+<insert id="replyWrite" parameterType="com.board.domain.ReplyVo">
+INSERT
+  INTO tbl_reply
+     (
+       bno
+     , writer
+     , content
+     , regDate
+     )
+ VALUES
+	 (
+	   #{bno}
+	 , #{writer}
+	 , #{content}
+	 , #{regDate}
+	 )
+</insert>
+
+<!-- 댓글 수정 -->
+<update id="replyModify" parameterType="com.board.domain.ReplyVo">
+UPDATE tbl_reply
+   SET 
+       writer = #{writer}
+     , content = #{content}
+ WHERE rno = #{rno}
+   AND bno = #{bno}
+</update>
+
+<!-- 댓글 삭제 -->
+<delete id="replyDelete" parameterType="com.board.domain.ReplyVo">
+DELETE
+  FROM tbl_reply
+ WHERE rno = #{rno}
+   AND bno = #{bno}
+</delete>
+
+<!-- 단일 댓글 조회 -->
+<select id="replySelect" parameterType="com.board.domain.ReplyVo" resultType="com.board.domain.ReplyVo">
+SELECT rno
+     , bno
+     , writer
+     , content
+     , regDate
+  FROM tbl_reply
+ WHERE bno = #{bno}
+   AND rno = #{rno}
+</select>
+</mapper>
