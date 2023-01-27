@@ -104,6 +104,9 @@ public class BoardController {
 📍 검색 페이지 오류 및 검색어 사라지는 오류 디버그</br></br>
 
 ## 2023-01-27
+📍 댓글 및 댓글 수정 구현</br></br>
+
+
 >오늘의 오류</br>
 >>분명 다 입력했는데, 계속 404 에러가 떠서 콘솔창을 찾아보니 이런 메시지가 떠있었다.</br></br>
 ![image](https://user-images.githubusercontent.com/49686619/215019103-9e6d1155-72bc-42f0-aa43-55c6d7e852c4.png) </br></br>
